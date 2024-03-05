@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Quality Checker</title>
+    <style>
+        body {
+            background-image: url("https://unsplash.com/s/photos/cloudy-sky");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            color: #41c4f8;
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 300px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            width: 100%;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #3e8e41;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            form {
+                width: 250px;
+            }
+        }
+
+        .info {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f5f5f5;
+            /* Light gray background */
+            box-shadow: 0 3px 5px rgba(235, 106, 106, 0.1);
+            /* Subtle shadow */
+            margin-top: 24px ;
+            display: none;
+            flex-direction: column;
+        }
+
+        .info-title {
+            font-size: 1.8rem;
+            /* Increased heading size */
+            margin-bottom: 15px;
+            /* More space after heading */
+            color: #333;
+            /* Darker text for heading */
+        }
+
+        .info-data{
+            margin: 8px 0;
+            color: #555; /* Medium Gray */
+            font-size: 25px ;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>WEATHER APP</h1>
+    <form id="form" action="/submit" method="post">
+        <label for="latitude">Latitude:</label>
+        <input type="text" id="latitude" name="latitude" placeholder="Enter Latitude">
+        <label for="longitude">Longitude:</label>
+        <input type="text" id="longitude" name="longitude" placeholder="Enter Longitude">
+        <button type="submit">Check Air Quality</button>
+    </form>
+    <div class="info" id="result">
+        <h1 class="info-title">AIR QUALITY</h1>
+        <p class="info-data">AQI: <span id="aqi"></span></p>
+        <p class="info-data">CO:<span id="co"></span></p>
+        <p class="info-data">NO2:<span id="no2"></span></p>
+        <p class="info-data">O3:<span id="o3"></span></p>
+        <p class="info-data">PM2.5:<span id="pm2.5"></span></p>
+        <p class="info-data">PM10:<span id="pm10"></span></p>
+        <p class="info-data">SO2:<span id="so2"></span></p>
+    </div>
+
+    <script src="./Weather.js">
+
+    </script>
+</body>
+
+</html>
